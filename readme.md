@@ -75,17 +75,17 @@ tg.ibrahim.kondo.bumaye_app
 👉 Les captures d'écran doivent être ajoutées dans le dossier `screenshots/` du projet et référencées ici.
 
 * Page d'accueil
-<img src="./screenshots/acceuil_ibrahimkondobumaye_app.jpg" alt="">
+<img src="./screenshots/acceuil_ibrahimkondobumaye_app.jpg" style="width: 150px; margin-left: 5px" alt="">
 * Liste des clients
-<img src="./screenshots/liste_clients_ibrahimkondobumaye_app.jpg" alt="">
+<img src="./screenshots/liste_clients_ibrahimkondobumaye_app.jpg" style="width: 150px; margin-left: 5px" alt="">
 * Formulaire ajout
-<img src="./screenshots/ajouter_client_ibrahimkondobumaye_app.jpg" alt="">
+<img src="./screenshots/ajouter_client_ibrahimkondobumaye_app.jpg" style="width: 150px; margin-left: 5px" alt="">
 * Fiche client (détails)
-<img src="./screenshots/voir_client_ibrahimkondobumaye_app.jpg" alt="">
+<img src="./screenshots/voir_client_ibrahimkondobumaye_app.jpg" style="width: 150px; margin-left: 5px" alt="">
 * Modification client
-<img src="./screenshots/maj_client_ibrahimkondobumaye_app.jpg" alt="">
+<img src="./screenshots/maj_client_ibrahimkondobumaye_app.jpg" style="width: 150px; margin-left: 5px" alt="">
 * Popup suppression
-<img src="./screenshots/supprimer_client_ibrahimkondobumaye_app.jpg" alt="">
+<img src="./screenshots/supprimer_client_ibrahimkondobumaye_app.jpg" style="width: 150px; margin-left: 5px" alt="">
 
 ---
 
