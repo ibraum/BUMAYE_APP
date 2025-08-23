@@ -90,7 +90,7 @@
                 android:paddingHorizontal="10dp"
                 android:background="@drawable/rounded_editext"
                 android:layout_marginBottom="8dp"
-                android:hint="Prénom" />
+                android:hint="Prénom *" />
 
             <EditText
                 android:id="@+id/etLastName"
@@ -99,13 +99,13 @@
                 android:paddingHorizontal="10dp"
                 android:background="@drawable/rounded_editext"
                 android:layout_marginBottom="8dp"
-                android:hint="Nom" />
+                android:hint="Nom *" />
 
             <EditText
                 android:id="@+id/etPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Numéro de téléphone"
+                android:hint="Numéro de téléphone *"
                 android:paddingHorizontal="10dp"
                 android:background="@drawable/rounded_editext"
                 android:layout_marginBottom="8dp"
