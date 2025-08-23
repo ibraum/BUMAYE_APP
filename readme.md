@@ -30,19 +30,17 @@ Projet réalisé en individuel (niveau AL3 ADIDOGOMÉ).
 ## 📂 Structure du projet
 
 ```plaintext
-com.prenom.nom.bumaye_app
+tg.ibrahim.kondo.bumaye_app
 │
 ├── activities/
 │   ├── MainActivity.kt          # Page de garde
-│   ├── ClientListActivity.kt    # Liste des clients
-│   ├── AddClientActivity.kt     # Formulaire ajout
-│   ├── EditClientActivity.kt    # Formulaire modification
-│   ├── ClientDetailActivity.kt  # Voir détails
+│   ├── ClientsActivity.kt       # Liste des clients
+│   ├── FormActivity.kt          # Formulaire ajout
+│   ├── UpdateClientActivity.kt  # Formulaire modification
+│   ├── DetailActivity.kt        # Voir détails
 │   ├── ClientAdapter.kt         # Adapter pour RecyclerView
+│   ├── ClientRepository.kt      # Repository pour RecyclerView
 │   └── Client.kt                # Classe modèle (mesures)
-│
-├── utils/
-│   └── ValidationUtils.kt       # Fonctions de validation
 │
 └── res/
     ├── layout/                  # Fichiers XML UI
