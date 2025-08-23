@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClientsActivity"
+    android:background="?attr/colorOnPrimary">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/rounded_bottom"
+        android:gravity="center_vertical">
+        <!-- ===== Titre ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/round_button"
+                    android:text="B"
+                    android:layout_marginEnd="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:elevation="4dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Bumaye App"
+                    android:layout_marginEnd="5dp"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center"
+                    android:elevation="4dp" />
+            </LinearLayout>
+            <View android:layout_marginTop="8dp" android:background="#31FFFFFF" android:layout_width="200dp"  android:layout_height="1dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Liste des clients"
+                android:textSize="22sp"
+                android:textColor="?attr/colorOnBackground"
+                android:gravity="center"
+                android:elevation="4dp" />
+        </LinearLayout>
+
+        <!-- ===== Ligne recherche + bouton ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:background="@drawable/rounded"
+            android:gravity="center_vertical">
+
+            <!-- Champ de recherche -->
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Rechercher un client..."
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:inputType="text"
+                android:padding="10dp"
+                android:background="@drawable/rounded_editext_full" />
+
+            <!-- Bouton rond + -->
+            <TextView
+                android:id="@+id/btnAddClient"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/black"
+                android:text="+"
+                android:layout_marginEnd="5dp"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:background="@drawable/round_button"
+                android:elevation="4dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ===== Liste des clients ===== -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/client_list_rc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/item_client"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
