@@ -45,7 +45,9 @@ class ClientAdapter (list : ArrayList<Client>) : RecyclerView.Adapter<ClientAdap
         holder.fullNameTv.text = "${client.lastName} ${client.firstName}"
         holder.orderDateTv.text = "Date commande : " + client.orderDate
         holder.deliveryDateTv.text = "Date livraison : " + client.deliveryDate
-        holder.amountTv.text = client.advance.toString()
+        holder.amountTv.text = "Total : " + client.totalAmount.toString()
+        holder.amountAdvanceTv.text = "Payé : " + client.advance.toString()
+        holder.phoneTv.text = client.phoneNumber
         holder.itemView.setOnClickListener {
             listener?.onItemClick(client)
         }
@@ -59,8 +61,10 @@ class ClientAdapter (list : ArrayList<Client>) : RecyclerView.Adapter<ClientAdap
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var fullNameTv = view.findViewById<TextView>(R.id.item_full_name_tv)
+        var phoneTv = view.findViewById<TextView>(R.id.item_phone_tv)
         var orderDateTv = view.findViewById<TextView>(R.id.item_order_date_tv)
         var deliveryDateTv = view.findViewById<TextView>(R.id.item_delivery_date_tv)
         var amountTv = view.findViewById<TextView>(R.id.item_amount_tv)
+        var amountAdvanceTv = view.findViewById<TextView>(R.id.item_amount_advance_tv)
     }
 }

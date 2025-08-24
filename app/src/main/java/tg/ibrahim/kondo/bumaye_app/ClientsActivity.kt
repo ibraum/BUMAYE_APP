@@ -85,7 +85,7 @@ class ClientsActivity : AppCompatActivity() {
                 }
                 startActivity(intent)
                 val message =
-                    "Nom: $fullName\nDate commande: $orderDate\nDate livraison: $deliveryDate\nMontant: $amount"
+                    "RESTE ${client.remainder.toString()} Nom: $fullName\nDate commande: $orderDate\nDate livraison: $deliveryDate\nMontant: $amount"
                 Toast.makeText(this@ClientsActivity, message, Toast.LENGTH_LONG).show()
 
                 // printTv.text = message
@@ -94,13 +94,13 @@ class ClientsActivity : AppCompatActivity() {
 
         val etSearch = findViewById<EditText>(R.id.etSearch)
         val btnAddClient = findViewById<TextView>(R.id.btnAddClient)
-// Clic sur "+"
+        // Clic sur "+"
         btnAddClient.setOnClickListener {
             val intent = Intent(this@ClientsActivity, FormActivity::class.java)
             startActivity(intent)
         }
 
-// Recherche
+        // Recherche
         etSearch.doOnTextChanged { text, _, _, _ ->
             val query = text.toString().lowercase(Locale.getDefault())
 
@@ -108,7 +108,7 @@ class ClientsActivity : AppCompatActivity() {
                 ArrayList(ClientRepository.clients)
             } else {
                 ClientRepository.clients.filter {
-                    it.firstName.lowercase().contains(query) || it.lastName.lowercase().contains(query)
+                    it.firstName.lowercase().contains(query) || it.lastName.lowercase().contains(query) || it.phoneNumber.lowercase().contains(query)
                 }.toCollection(ArrayList())
             }
 

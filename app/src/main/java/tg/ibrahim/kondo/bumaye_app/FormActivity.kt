@@ -129,7 +129,7 @@ class FormActivity : AppCompatActivity() {
         btnSaveClient.setOnClickListener {
             if (validateForm()) {
                 val client = createClientFromForm()
-                ClientRepository.clients.add(client)
+                ClientRepository.clients.add(0, client)
                 Log.d("FormActivity", "Clients totaux : ${ClientRepository.clients.size}")
                 print("hguergueiguigurieguiruivfguiergvuiergvuveguieguiruigeugruie" + client.toString())
                 Toast.makeText(this, "${ClientRepository.clients.size}" +client.toString(), Toast.LENGTH_LONG).show()
@@ -143,20 +143,33 @@ class FormActivity : AppCompatActivity() {
 
         if (etFirstName.text.toString().trim().isEmpty()) {
             etFirstName.error = "Prénom obligatoire"
+            etFirstName.requestFocus()
             valid = false
         }
 
         if (etLastName.text.toString().trim().isEmpty()) {
             etLastName.error = "Nom obligatoire"
+            etLastName.requestFocus()
             valid = false
         }
 
-        if (!etPhoneNumber.text.toString().matches(Regex("\\d{8,12}"))) {
+        if (!etPhoneNumber.text.toString().matches(Regex("^[0-9]{8,12}$"))) {
             etPhoneNumber.error = "Numéro invalide (8 à 12 chiffres)"
+            etPhoneNumber.requestFocus()
             valid = false
         }
 
-        if (etOrderDate.text.isEmpty() || etDeliveryDate.text.isEmpty() || deliveryDateCalendar.before(orderDateCalendar)) {
+        if (etOrderDate.text.isEmpty()) {
+            etOrderDate.error = "Selectionnez une date"
+            valid = false
+        }
+
+        if (etDeliveryDate.text.isEmpty()) {
+            etDeliveryDate.error = "Selectionnez une date"
+            valid = false
+        }
+
+        if (deliveryDateCalendar.before(orderDateCalendar)) {
             etDeliveryDate.error = "Date de livraison doit être ≥ commande"
             valid = false
         }
@@ -165,10 +178,18 @@ class FormActivity : AppCompatActivity() {
         val advance = etAdvance.text.toString().toDoubleOrNull()
         if (total == null || total < 0) {
             etTotalAmount.error = "Montant total invalide"
+            etTotalAmount.requestFocus()
             valid = false
         }
         if (advance == null || advance < 0) {
             etAdvance.error = "Avance invalide"
+            etAdvance.requestFocus()
+            valid = false
+        }
+
+        if ((total ?: 0.0) < (advance ?: 0.0)) {
+            etAdvance.error = "L'avance n'est pas supérieure au total"
+            etAdvance.requestFocus()
             valid = false
         }
 
@@ -176,6 +197,8 @@ class FormActivity : AppCompatActivity() {
     }
 
     private fun createClientFromForm(): Client {
+        var totalAmount = etTotalAmount.text.toString().toDoubleOrNull() ?: 0.0
+        var advance = etAdvance.text.toString().toDoubleOrNull() ?: 0.0
         return Client(
             id = ClientRepository.nextId(),
             firstName = etFirstName.text.toString().trim(),
@@ -183,9 +206,9 @@ class FormActivity : AppCompatActivity() {
             phoneNumber = etPhoneNumber.text.toString().trim(),
             orderDate = etOrderDate.text.toString(),
             deliveryDate = etDeliveryDate.text.toString(),
-            totalAmount = etTotalAmount.text.toString().toDoubleOrNull() ?: 0.0,
-            advance = etAdvance.text.toString().toDoubleOrNull() ?: 0.0,
-            remainder = etRemainder.text.toString().toDoubleOrNull() ?: 0.0,
+            totalAmount = totalAmount,
+            advance = advance,
+            remainder = (totalAmount - advance),
             shoulder = etShoulder.text.toString().toFloatOrNull() ?: 0f,
             chest = etChest.text.toString().toFloatOrNull() ?: 0f,
             lengthWaist = etLengthWaist.text.toString().toFloatOrNull() ?: 0f,

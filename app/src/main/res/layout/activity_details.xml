@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -24,7 +25,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/baseline_chevron_left_24"
-            android:contentDescription="Retour" />
+            android:contentDescription="@string/back" />
 
         <!-- Titre de la page -->
         <TextView
@@ -32,7 +33,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Détails Client"
+            android:text="@string/client_details"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -45,7 +46,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/baseline_create_24"
-            android:contentDescription="Mettre à jour"
+            android:contentDescription="@string/update"
             android:layout_marginEnd="8dp" />
 
         <!-- Icône suppression -->
@@ -55,7 +56,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/baseline_delete_outline_24"
-            android:contentDescription="Supprimer" />
+            android:contentDescription="@string/delete" />
 
     </LinearLayout>
 
@@ -95,7 +96,8 @@
                         android:textSize="10sp"
                         android:gravity="center"
                         android:layout_marginBottom="14dp"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        tools:ignore="SmallSp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -108,7 +110,7 @@
                             android:layout_height="24dp"
                             android:layout_width="24dp"
                             android:src="@drawable/man_head"
-                            android:contentDescription="phone"
+                            android:contentDescription="@string/man_head"
                             android:textColor="@color/spotify_green"
                             app:tint="@color/white" />
                         <TextView
@@ -143,7 +145,7 @@
                             android:layout_height="24dp"
                             android:layout_width="24dp"
                             android:src="@drawable/baseline_call_24"
-                            android:contentDescription="phone"
+                            android:contentDescription="@string/phone_img"
                             android:textColor="@color/spotify_green" />
                         <TextView
                             android:id="@+id/tvPhoneValue"
@@ -175,17 +177,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Date commande"
+                            android:text="@string/order_date_label"
                             android:textStyle="bold"
                             android:textSize="10sp"
                             android:gravity="center|bottom"
                             android:layout_marginBottom="5dp"
-                            android:textColor="@color/spotify_green" />
+                            android:textColor="@color/spotify_green"
+                            tools:ignore="SmallSp" />
                         <TextView
                             android:id="@+id/tvOrderDateValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Date commande"
+                            android:text="@string/order_date_value"
                             android:textStyle="bold"
                             android:textSize="16sp"
                             android:gravity="center|bottom"
@@ -194,17 +197,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Date livraison"
+                            android:text="@string/delivered_date_label"
                             android:textStyle="bold"
                             android:textSize="10sp"
                             android:layout_marginBottom="5dp"
                             android:gravity="center|bottom"
-                            android:textColor="@color/spotify_green" />
+                            android:textColor="@color/spotify_green"
+                            tools:ignore="SmallSp" />
                         <TextView
                             android:id="@+id/tvDeliveryDateValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Date livraison"
+                            android:text="@string/delivered_date_value"
                             android:textStyle="bold"
                             android:textSize="16sp"
                             android:gravity="center|bottom"
@@ -221,12 +225,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Paiement"
+                            android:text="@string/payment"
                             android:textStyle="bold"
                             android:textSize="10sp"
                             android:gravity="center|bottom"
                             android:layout_marginBottom="5dp"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            tools:ignore="SmallSp" />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -235,7 +240,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="payé : "
+                                android:text="@string/paid"
                                 android:textStyle="bold"
                                 android:textSize="16sp"
                                 android:gravity="center|bottom"
@@ -244,7 +249,7 @@
                             <TextView
                                 android:id="@+id/tvAdvanceValue"                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Total"
+                                android:text="@string/paid_value"
                                 android:textStyle="bold"
                                 android:textSize="16sp"
                                 android:gravity="center|bottom"
@@ -259,19 +264,20 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Reste : "
+                                android:text="@string/remainder_label"
                                 android:textStyle="bold"
                                 android:textSize="16sp"
                                 android:layout_marginBottom="15sp"
                                 android:textColor="@color/spotify_black" />
                             <TextView
                                 android:id="@+id/tvRemainderValue"                                android:layout_height="wrap_content"
-                                android:text="Restant"
+                                android:text="@string/remainder_value"
                                 android:textStyle="bold"
                                 android:textSize="16sp"
                                 android:gravity="center|bottom"
                                 android:layout_marginBottom="15sp"
-                                android:textColor="@color/spotify_black"  android:layout_width="wrap_content"/>
+                                android:textColor="@color/spotify_black"
+                                android:layout_width="wrap_content"/>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -325,7 +331,7 @@
                     android:id="@+id/tvShoulderValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -352,7 +358,7 @@
                     android:id="@+id/tvChestValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -379,7 +385,7 @@
                     android:id="@+id/tvLengthWaistValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -406,7 +412,7 @@
                     android:id="@+id/tvVentralTurnValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -433,7 +439,7 @@
                     android:id="@+id/tvHipValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -460,7 +466,7 @@
                     android:id="@+id/tvBodiceLengthValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -487,7 +493,7 @@
                     android:id="@+id/tvBeltValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -514,7 +520,7 @@
                     android:id="@+id/tvSkirtLengthValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -541,7 +547,7 @@
                     android:id="@+id/tvDressLengthValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -568,7 +574,7 @@
                     android:id="@+id/tvSleeveLengthValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -595,7 +601,7 @@
                     android:id="@+id/tvSleeveSizeValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -622,7 +628,7 @@
                     android:id="@+id/tvPantsLengthValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -649,7 +655,7 @@
                     android:id="@+id/tvShortDressLengthValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -676,7 +682,7 @@
                     android:id="@+id/tvThighCircumferenceValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -697,13 +703,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/knee_length"
-                    android:textColor="#555555" />
+                    android:textColor="#555555"
+                    tools:ignore="TooManyViews" />
 
                 <TextView
                     android:id="@+id/tvKneeLengthValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -730,7 +737,7 @@
                     android:id="@+id/tvKneeCircumferenceValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -757,7 +764,7 @@
                     android:id="@+id/tvBottomValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -784,7 +791,7 @@
                     android:id="@+id/tvOtherMeasuresValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
@@ -836,7 +843,7 @@
                     android:id="@+id/tvTotalAmountValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-"
+                    android:text="@string/nothing"
                     android:textStyle="bold"
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>

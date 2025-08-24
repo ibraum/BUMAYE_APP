@@ -194,27 +194,63 @@ class UpdateClientActivity : AppCompatActivity() {
             etLastName.error = "Nom obligatoire"
             valid = false
         }
-        if (!etPhoneNumber.text.toString().matches(Regex("\\d{8,12}"))) {
+
+        if (!etPhoneNumber.text.toString().matches(Regex("^[0-9]{8,12}$"))) {
             etPhoneNumber.error = "Numéro invalide (8 à 12 chiffres)"
+            etPhoneNumber.requestFocus()
             valid = false
         }
-        if (etOrderDate.text.isEmpty() || etDeliveryDate.text.isEmpty() || deliveryDateCalendar.before(orderDateCalendar)) {
+
+        if (etOrderDate.text.isEmpty()) {
+            etOrderDate.error = "Selectionnez une date"
+            valid = false
+        }
+
+        if (etDeliveryDate.text.isEmpty()) {
+            etDeliveryDate.error = "Selectionnez une date"
+            valid = false
+        }
+
+        if (deliveryDateCalendar.before(orderDateCalendar)) {
             etDeliveryDate.error = "Date de livraison doit être ≥ commande"
             valid = false
         }
+
+        val total = etTotalAmount.text.toString().toDoubleOrNull()
+        val advance = etAdvance.text.toString().toDoubleOrNull()
+        if (total == null || total < 0) {
+            etTotalAmount.error = "Montant total invalide"
+            etTotalAmount.requestFocus()
+            valid = false
+        }
+        if (advance == null || advance < 0) {
+            etAdvance.error = "Avance invalide"
+            etAdvance.requestFocus()
+            valid = false
+        }
+
+        if ((total ?: 0.0) < (advance ?: 0.0)) {
+            etAdvance.error = "L'avance n'est pas supérieure au total"
+            etAdvance.requestFocus()
+            valid = false
+        }
+
         return valid
     }
 
     private fun updateClientFromForm() {
+        var totalAmountValue = etTotalAmount.text.toString().toDoubleOrNull() ?: 0.0
+        var advanceValue = etAdvance.text.toString().toDoubleOrNull() ?: 0.0
+        var remainderValue = totalAmountValue - advanceValue
         client?.apply {
             firstName = etFirstName.text.toString().trim()
             lastName = etLastName.text.toString().trim()
             phoneNumber = etPhoneNumber.text.toString().trim()
             orderDate = etOrderDate.text.toString()
             deliveryDate = etDeliveryDate.text.toString()
-            totalAmount = etTotalAmount.text.toString().toDoubleOrNull() ?: 0.0
-            advance = etAdvance.text.toString().toDoubleOrNull() ?: 0.0
-            remainder = etRemainder.text.toString().toDoubleOrNull() ?: 0.0
+            totalAmount = totalAmountValue
+            advance = advanceValue
+            remainder = remainderValue
             shoulder = etShoulder.text.toString().toFloatOrNull() ?: 0f
             chest = etChest.text.toString().toFloatOrNull() ?: 0f
             lengthWaist = etLengthWaist.text.toString().toFloatOrNull() ?: 0f

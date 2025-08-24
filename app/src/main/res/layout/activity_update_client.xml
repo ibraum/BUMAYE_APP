@@ -28,7 +28,7 @@
                     android:layout_marginStart="8dp"
                     android:backgroundTint="@color/black"
                     android:background="@drawable/round_button"
-                    android:text="B"
+                    android:text="@string/logo_text"
                     android:layout_marginEnd="5dp"
                     android:textSize="30sp"
                     android:textColor="@android:color/white"
@@ -38,7 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Bumaye App"
+                    android:text="@string/bumaye_app"
                     android:layout_marginEnd="5dp"
                     android:textSize="30sp"
                     android:textColor="@android:color/white"
@@ -49,196 +49,204 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mettre à jour le client"
+                android:text="@string/update_client_title"
                 android:textSize="16sp"
                 android:textColor="?attr/colorOnBackground"
                 android:gravity="center"
                 android:elevation="4dp" />
         </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/rounded_top"
-        android:padding="16dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="15dp"
-            android:gravity="center">
+            android:orientation="vertical"
+            android:background="@drawable/rounded_top"
+            android:padding="16dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="7dp"
+                    android:background="@drawable/radius_black"
+                    android:gravity="center" />
+            </LinearLayout>
+            <!-- ==== Titre ==== -->
             <TextView
-                android:layout_width="75dp"
-                android:layout_height="7dp"
-                android:background="@drawable/radius_black"
-                android:gravity="center" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/client_information"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:paddingBottom="12dp" />
+
+            <!-- ==== Infos Client ==== -->
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp"
+                android:hint="@string/first_name_hint" />
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp"
+                android:hint="@string/last_name_hint" />
+
+            <EditText
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_number_hint"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp"
+                android:inputType="phone" />
+
+            <!-- ==== Mesures ==== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/measurements_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <EditText android:id="@+id/etShoulder"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/shoulder_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etChest"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/chest_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etLengthWaist"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/waist_length_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etVentralTurn"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/ventral_turn_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etHip"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/hip_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etBodiceLength"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/bodice_length_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etBelt"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/belt_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etSkirtLength"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/skirt_length_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etDressLength"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/dress_length_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etSleeveLength"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/sleeve_length_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etSleeveSize"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/sleeve_size_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etPantsLength"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/pants_length_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etShortDressLength"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/short_dress_length_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etThighCircumference"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/thigh_circumference_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etKneeLength"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/knee_length_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etKneeCircumference"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/knee_circumference_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etBottom"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/bottom_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etOtherMeasures"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/other_measures_hint" android:inputType="numberDecimal" />
+
+            <!-- ==== Commande ==== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etOrderDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/order_date_hint"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none" />
+
+            <EditText
+                android:id="@+id/etDeliveryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp"
+                android:hint="@string/delivery_date_hint"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none" />
+
+            <!-- ==== Paiement ==== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <EditText android:id="@+id/etTotalAmount"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/total_amount_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etAdvance"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/advance_hint" android:inputType="numberDecimal" />
+            <EditText android:id="@+id/etRemainder"                 android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_editext"
+                android:layout_marginBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/remainder_hint"
+                android:inputType="numberDecimal"
+                android:textColor="@color/spotify_green"
+                android:textColorHint="@color/spotify_green"
+                android:focusable="false"
+                android:cursorVisible="false"/>
+
+            <!-- Bouton de sauvegarde -->
+            <Button
+                android:id="@+id/btnSaveClient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/update_client_button"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_primary_button"
+                android:textColor="@android:color/white" />
         </LinearLayout>
-        <!-- ==== Titre ==== -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Informations du client"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingBottom="12dp" />
-
-        <!-- ==== Infos Client ==== -->
-        <EditText
-            android:id="@+id/etFirstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp"
-            android:hint="Prénom" />
-
-        <EditText
-            android:id="@+id/etLastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp"
-            android:hint="Nom" />
-
-        <EditText
-            android:id="@+id/etPhoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Numéro de téléphone"
-            android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp"
-            android:inputType="phone" />
-
-        <!-- ==== Mesures ==== -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mesures"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp" />
-
-        <EditText android:id="@+id/etShoulder"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Épaule (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etChest"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Poitrine (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etLengthWaist"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Longueur taille (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etVentralTurn"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Tour ventral (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etHip"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Hanche (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etBodiceLength"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Longueur buste (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etBelt"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Ceinture (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etSkirtLength"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Longueur jupe (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etDressLength"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Longueur robe (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etSleeveLength"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Longueur manche (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etSleeveSize"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Taille manche (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etPantsLength"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Longueur pantalon (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etShortDressLength"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Longueur robe courte (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etThighCircumference"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Tour cuisse (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etKneeLength"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Longueur genou (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etKneeCircumference"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Tour genou (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etBottom"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Bas (cm)" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etOtherMeasures"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Autres mesures (cm)" android:inputType="numberDecimal" />
-
-        <!-- ==== Commande ==== -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Commande"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp" />
-
-        <EditText
-            android:id="@+id/etOrderDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Date de commande (JJ/MM/AAAA)"
-            android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp"
-            android:focusable="false"
-            android:clickable="true"
-            android:inputType="none" />
-
-        <EditText
-            android:id="@+id/etDeliveryDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp"
-            android:hint="Date de livraison (JJ/MM/AAAA)"
-            android:focusable="false"
-            android:clickable="true"
-            android:inputType="none" />
-
-        <!-- ==== Paiement ==== -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Paiement"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp" />
-
-        <EditText android:id="@+id/etTotalAmount"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Montant total" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etAdvance"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Avance" android:inputType="numberDecimal" />
-        <EditText android:id="@+id/etRemainder"                 android:paddingHorizontal="10dp"
-            android:background="@drawable/rounded_editext"
-            android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Reste" android:inputType="numberDecimal" />
-
-        <!-- Bouton de sauvegarde -->
-        <Button
-            android:id="@+id/btnSaveClient"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mettre à jour le client"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_primary_button"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
     </LinearLayout>
 </ScrollView>
